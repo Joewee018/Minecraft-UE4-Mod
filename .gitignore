@@ -1,0 +1,45 @@
+# Unreal Engine generated and packaged output
+Package/
+Unreal/Binaries/
+Unreal/Build/
+Unreal/DerivedDataCache/
+Unreal/Intermediate/
+Unreal/Saved/
+Unreal/Content/
+
+# Java/Fabric generated files and downloaded dependencies
+Bridge/.gradle/
+Bridge/build/
+Bridge/run/
+Bridge/.fabric/
+Bridge/gradle/loom-cache/
+
+# Local work, test reports, and job sync archives
+Work/
+Reports/
+Logs/
+Jobs/sync-*.zip
+
+# Reproducible generated Blender exports and reference/model files
+Avatar/**
+!Avatar/
+!Avatar/blender/
+!Avatar/blender/*.py
+
+# User-made/custom map archives; distribute separately with rights cleared
+Maps/*.zip
+
+# Editor/OS noise
+.vs/
+.idea/
+*.suo
+*.user
+Thumbs.db
+Desktop.ini
+
+# Local automation and sync work
+Jobs/
+
+# Game/mod artwork and private handoff notes
+Bridge/src/main/resources/assets/
+Docs/CODEX_HANDOFF_PROMPT.md

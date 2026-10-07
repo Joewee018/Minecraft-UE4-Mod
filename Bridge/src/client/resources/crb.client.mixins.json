@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "crb.client.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "client": [ "MinecraftAttackMixin", "PlayerTravelMixin", "LocalPlayerAutoJumpMixin" ],
+  "injectors": { "defaultRequire": 1 }
+}

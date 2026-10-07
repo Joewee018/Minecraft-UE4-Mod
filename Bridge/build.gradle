@@ -1,0 +1,61 @@
+plugins { id 'fabric-loom' version "${loom_version}" }
+
+version = project.mod_version
+group = project.maven_group
+base { archivesName = project.archives_base_name }
+
+repositories { mavenCentral() }
+
+// Everything this build writes stays inside Crossover-Rebuilt.
+def workDir = project.file('../Work').absolutePath
+def endpointFile = new File(workDir, 'bridge-endpoint.json').absolutePath
+
+loom {
+    splitEnvironmentSourceSets()
+    accessWidenerPath = file('src/main/resources/crb.accesswidener')
+    mods {
+        'crossover_rebuilt' { sourceSet sourceSets.main; sourceSet sourceSets.client }
+    }
+    runs {
+        client {
+            runDir('../Work/mc')
+            vmArg('-Xmx2G')
+            vmArg('-Dcrb.endpoint=' + endpointFile)
+            vmArg('-Dcrb.devWorld=true')
+            programArgs('--width', '640', '--height', '360')
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    inputs.property 'protocol', project.bridge_protocol
+    filesMatching('fabric.mod.json') { expand 'version': project.version, 'protocol': project.bridge_protocol }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+tasks.withType(JavaCompile).configureEach { options.release = 17; options.encoding = 'UTF-8' }
+test {
+    useJUnitPlatform()
+    testLogging { events 'passed', 'failed'; exceptionFormat 'full' }
+}
+
+// Live Java-side test against a running dev client (Start-Minecraft job). Writes Reports\LiveProbe.json.
+tasks.register('liveProbe', JavaExec) {
+    dependsOn testClasses, remapJar
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'crb.LiveProbe'
+    args endpointFile, project.file('../Reports/LiveProbe.json').absolutePath, remapJar.archiveFile.get().asFile.absolutePath
+}

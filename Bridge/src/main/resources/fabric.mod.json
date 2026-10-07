@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "crossover_rebuilt",
+  "version": "${version}",
+  "name": "Crossover Rebuilt Bridge",
+  "description": "Bounded local bridge between a real Minecraft 1.20.1 runtime and the Crossover-Rebuilt Unreal host. Protocol ${protocol}.",
+  "license": "Project-original code",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["crb.BridgeMod"],
+    "client": ["crb.client.BridgeClient"]
+  },
+  "mixins": [ "crb.mixins.json", { "config": "crb.client.mixins.json", "environment": "client" } ],
+  "accessWidener": "crb.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.17.2",
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

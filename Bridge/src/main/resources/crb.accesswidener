@@ -1,0 +1,28 @@
+accessWidener v2 named
+# Read-only access to the texture a RenderType binds (pose capture tags each surface with its real texture).
+accessible class net/minecraft/client/renderer/RenderType$CompositeRenderType
+accessible method net/minecraft/client/renderer/RenderType$CompositeRenderType state ()Lnet/minecraft/client/renderer/RenderType$CompositeState;
+accessible class net/minecraft/client/renderer/RenderType$CompositeState
+accessible field net/minecraft/client/renderer/RenderType$CompositeState textureState Lnet/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard;
+accessible class net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard
+accessible method net/minecraft/client/renderer/RenderStateShard$EmptyTextureStateShard cutoutTexture ()Ljava/util/Optional;
+# Live light map (16x16 sky/block response) for Unreal voxel materials.
+accessible field net/minecraft/client/renderer/LightTexture lightPixels Lcom/mojang/blaze3d/platform/NativeImage;
+# Live particles for bounded export.
+accessible field net/minecraft/client/particle/ParticleEngine particles Ljava/util/Map;
+# Vanilla fog (horizon) colour computed each frame by FogRenderer.
+accessible field net/minecraft/client/renderer/FogRenderer fogRed F
+accessible field net/minecraft/client/renderer/FogRenderer fogGreen F
+accessible field net/minecraft/client/renderer/FogRenderer fogBlue F
+# Vanilla title/subtitle (mod jumpscares use custom-font titles) and timings, rendered offscreen for Unreal.
+accessible field net/minecraft/client/gui/Gui title Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/client/gui/Gui subtitle Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/client/gui/Gui titleTime I
+accessible field net/minecraft/client/gui/Gui titleFadeInTime I
+accessible field net/minecraft/client/gui/Gui titleStayTime I
+accessible field net/minecraft/client/gui/Gui titleFadeOutTime I
+# Chat history (vanilla HUD chat lines) and the death screen's cause-of-death message.
+accessible field net/minecraft/client/gui/components/ChatComponent allMessages Ljava/util/List;
+accessible field net/minecraft/client/gui/screens/DeathScreen causeOfDeath Lnet/minecraft/network/chat/Component;
+# Maps menu: open an imported map without the vanilla backup / safe-mode prompts (Unreal drives the client).
+accessible method net/minecraft/client/gui/screens/worldselection/WorldOpenFlows doLoadLevel (Lnet/minecraft/client/gui/screens/Screen;Ljava/lang/String;ZZ)V
