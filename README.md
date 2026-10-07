@@ -2,11 +2,15 @@
 
 An unofficial hybrid modding project that pairs a Java/Fabric Bridge with an Unreal Engine 4.27 presentation layer.
 
-## Repository contents
+## Read this before downloading
 
-This public repository contains project source code, project configuration, build scripts, and documentation. It does **not** contain a packaged game build, Minecraft or other third-party game assets, character meshes/skins, map archives, or generated build output. The small baseline host map and project-authored materials are included. Those files remain outside this repository and must be obtained or used only with the rights required by their respective owners.
+This GitHub repository is a **source-code project, not a ready-to-play game or installer**.
 
-This repository is not a standalone game download. It does not include Mojang/Microsoft code or assets, or other proprietary game content.
+It includes the Java/Fabric Bridge source for Minecraft world logic, the Unreal Engine C++ host source and project settings, build scripts, the baseline host map, and 10 baseline Unreal materials.
+
+It does **not** include a packaged Windows game, a compiled Bridge jar, Minecraft game files, character meshes/skins/animations, map archives, or generated build output. As a result, downloading this repository alone will not let you play the game. You need the developer tools listed below and any required assets must be sourced or created with permission from their owners.
+
+The project does not include Mojang/Microsoft code or assets, or other proprietary game content. Fabric Loom resolves mapped Minecraft build dependencies; users do not need to manually decompile Minecraft.
 
 ## Architecture
 
