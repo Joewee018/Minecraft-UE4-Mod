@@ -43,3 +43,19 @@ Jobs/
 # Game/mod artwork and private handoff notes
 Bridge/src/main/resources/assets/
 Docs/CODEX_HANDOFF_PROMPT.md
+
+# Publicly shareable baseline Unreal project assets (character/game-property assets stay excluded)
+!Unreal/Content/
+!Unreal/Content/Crb/
+Unreal/Content/Crb/*
+!Unreal/Content/Crb/HostWorld.umap
+!Unreal/Content/Crb/M_CrbBlock.uasset
+!Unreal/Content/Crb/M_CrbBlockTranslucent.uasset
+!Unreal/Content/Crb/M_CrbEmissive.uasset
+!Unreal/Content/Crb/M_CrbEntity.uasset
+!Unreal/Content/Crb/M_CrbEntityTranslucent.uasset
+!Unreal/Content/Crb/M_CrbOutline.uasset
+!Unreal/Content/Crb/M_CrbParticle.uasset
+!Unreal/Content/Crb/M_CrbSky.uasset
+!Unreal/Content/Crb/M_CrbTonemap.uasset
+!Unreal/Content/Crb/M_CrbVertexColor.uasset

@@ -4,7 +4,7 @@ An unofficial hybrid modding project that pairs a Java/Fabric Bridge with an Unr
 
 ## Repository contents
 
-This public repository contains project source code, project configuration, build scripts, and documentation. It does **not** contain a packaged game build, Minecraft or other third-party game assets, Unreal content assets, map archives, or generated build output. Those files remain outside this repository and must be obtained or used only with the rights required by their respective owners.
+This public repository contains project source code, project configuration, build scripts, and documentation. It does **not** contain a packaged game build, Minecraft or other third-party game assets, character meshes/skins, map archives, or generated build output. The small baseline host map and project-authored materials are included. Those files remain outside this repository and must be obtained or used only with the rights required by their respective owners.
 
 This repository is not a standalone game download. It does not include Mojang/Microsoft code or assets, or other proprietary game content.
 
@@ -12,7 +12,7 @@ This repository is not a standalone game download. It does not include Mojang/Mi
 
 - `Bridge/` contains the Fabric mod source. Java owns world state, physics, combat, and AI.
 - `Unreal/Source/` contains the UE4 C++ host. Unreal handles rendering, input, HUD, menus, characters, and camera presentation.
-- `Unreal/Scripts/` contains editor-side asset/build scripts. Generated and content asset files are excluded.
+- `Unreal/Scripts/` contains editor-side asset/build scripts. The baseline host map and project materials are included; character/game-property assets are excluded.
 - `Tools/` contains local build and test scripts.
 
 ## How to install / build from source
