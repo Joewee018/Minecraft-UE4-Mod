@@ -33,8 +33,8 @@ This is a **developer setup guide**, not a one-click player install. The reposit
 1. Clone this repository:
 
    ```powershell
-   git clone https://github.com/Joewee018/Crossover-Rebuilt.git
-   cd Crossover-Rebuilt
+   git clone https://github.com/Joewee018/Minecraft-UE4-Mod.git
+   cd Minecraft-UE4-Mod
    ```
 
 2. Open `Tools/Common.ps1` and update `$env:JAVA_HOME` and `$UE` to the JDK 17 and Unreal Engine 4.27 folders on your computer. The checked-in values point to the original developer's machine.
